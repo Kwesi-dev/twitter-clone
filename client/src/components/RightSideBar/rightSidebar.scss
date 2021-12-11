@@ -1,0 +1,243 @@
+@import '../../globals.scss';
+.rightSidebar{
+    width: 100%;
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 20px;
+    .searchBar{
+        width: 75%;
+        height: 20px;
+        border-radius: 20px;
+        margin-top: 5px;
+        background-color: $inputBackground;
+        display: flex;
+        align-items: center;
+        color: $textColor;
+        padding: 10px 14px;
+        margin-bottom: 5px;
+
+        .searchIcon{
+            font-size: 20px;
+            margin-right: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        input{
+            border: none;
+            padding: 7px;
+            font-size: 16px;
+            color: $textColor;
+            background-color: $inputBackground;
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .trendsWidget{
+        width: 80%;
+        background-color: $inputBackground;
+        border-radius: 20px;
+        cursor: pointer;
+        .widgetItemHeader{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-left: 15px;
+            padding-top: 10px;
+            .widgetHeader{
+                font-weight: 600;
+                font-size: 20px;
+            }
+            .widgetIcon{
+                color: $textColor;
+                cursor: pointer;
+                padding-right: 40px;
+            }
+        }
+        .widgetItemItem{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 0px;
+            .widgetTitle{
+                display: flex;
+                flex-direction: column;
+                padding-left: 15px;
+                span{
+                    font-size: 13px;
+                    color: $textColor;
+                    margin-bottom: 5px;
+                }
+                .span2{
+                    color: black;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+            .widgetIcon{
+                font-size: 20px;
+                color: $textColor;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+            &:hover{
+                background-color: $hoverColor;
+            }
+            .more{
+                padding: 10px 0 10px 15px;
+                color: $mainColor;
+            }
+
+        }
+        
+    }
+    .followWidget{
+        width: 80%;
+        background-color: $inputBackground;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        padding-top: 10px;
+        cursor: pointer;
+        .followWidgetHeader{
+            font-size: 22px;
+            font-weight: 600;
+            padding: 10px 0 10px 15px;
+        }
+        .followWidgetItem{
+            display: flex;
+            align-items: center;
+            padding: 10px 0 10px 15px;
+            margin-bottom: 14px;
+            .widgetProfilePic{
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                margin-right: 10px;
+            }
+            .widgetProfileNames{
+                display: flex;
+                flex-direction: column;
+                .supName{
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                .subName{
+                    color: $textColor;
+                    font-size: 14px;
+                }
+            }
+            .followbtn{
+                margin-left: 120px;
+                background-color: black;
+                color: white;
+                padding: 7px 12px;
+                border-radius: 20px;
+                border: none;
+                font-size: 16px;
+                font-weight: 400;
+                cursor: pointer;
+            }
+            .more{
+                color: $mainColor;
+                padding: 10px 0 10px 15px;
+
+            }
+            &:hover{
+                background-color: $hoverColor;
+            }
+        }
+        .followWidgetPopup{
+            width: 300px;
+            height: 250px;
+            -webkit-box-shadow: 0px 5px 15px -2px #000000; 
+            box-shadow: 0px 5px 15px -2px #000000;
+            background-color: white;
+            position: absolute;
+            bottom: 350px;
+            padding: 10px;
+            border-radius: 20px;
+            opacity: 0;
+            cursor: pointer;
+            .popupTop{
+                display: flex;
+                justify-content: space-between;
+                .fwpProfile{
+                    display: flex;
+                    flex-direction: column;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        margin-bottom: 10px;
+                    }
+                    .pSupName{
+                        font-weight: 500;
+                    }
+                    .pSubName{
+                        color: $textColor;
+                        margin-top: 5px;
+                        font-size: 14px;
+                    }
+                }
+                .popupfollowbtn{
+                    height: 35px;
+                    background-color: black;
+                    color: white;
+                    padding: 7px 12px;
+                    border-radius: 20px;
+                    border: none;
+                    font-size: 16px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    text-align: center;
+                }
+            }
+            .popupInfo{
+                margin-top: 15px;
+                font-size: 15px;
+            }
+            .followingContainer{
+                margin: 10px 0;
+                display: flex;
+                .followingItem{
+                    margin-right: 10px;
+                    .following{
+                        color: $textColor;
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .popupfooter{
+                color: $textColor;
+                font-size: 13px;
+            }
+        }
+    }
+   
+    .rightFooter{
+        width: 70%;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            cursor: pointer;
+            li{
+                color: $textColor;
+                font-size: 12px;
+                margin-right: 10px;
+                margin-bottom: 7px;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}
