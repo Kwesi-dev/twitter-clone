@@ -1,15 +1,5 @@
 .app{
-    width: 100%;
+    width: 100vw;
+    height: 100%;
     display: flex;
-    .left{
-        flex: 1;
-        border-right: 1px solid lightgray;
-    }
-    .center{
-        flex: 2.5;
-    }
-    .right{
-        flex: 2;
-        border-left: 1px solid lightgray;
-    }
 }

@@ -1,7 +1,9 @@
 @import '../../globals.scss';
 .leftSideBar{
-    width: 320px;
+    flex: 1;
     height: 100vh;
+    position: sticky;
+    top: 0;
     .leftSidebarWrapper{
         width: 100%;
         height: 90%;

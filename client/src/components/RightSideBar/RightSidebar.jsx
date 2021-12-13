@@ -85,27 +85,7 @@ const RightSidebar = () => {
                         <span className="subName">@FCB</span>
                     </div>
                     <button className="followbtn">follow</button>
-                </div>
-                <div className="followWidgetItem">
-                    <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" className="widgetProfilePic" />
-                    <div className="widgetProfileNames">
-                        <span className="supName">Fc Barcelona</span>
-                        <span className="subName">@FCB</span>
-                    </div>
-                    <button className="followbtn">follow</button>
-                </div>
-                <div className="followWidgetItem">
-                    <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" className="widgetProfilePic" />
-                    <div className="widgetProfileNames">
-                        <span className="supName">Fc Barcelona</span>
-                        <span className="subName">@FCB</span>
-                    </div>
-                    <button className="followbtn">follow</button>
-                </div>
-                <div className="followWidgetItem">
-                    <span className="more">See more</span>
-                </div>
-                <div className="followWidgetPopup">
+                    <div className="followWidgetPopup">
                     <div className="popupTop">
                         <div className="fwpProfile">
                             <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" />
@@ -126,6 +106,70 @@ const RightSidebar = () => {
                         </div>
                     </div>
                     <span className="popupfooter">Not followed by anyone you are following</span>
+                </div>
+                </div>
+                <div className="followWidgetItem">
+                    <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" className="widgetProfilePic" />
+                    <div className="widgetProfileNames">
+                        <span className="supName">Fc Barcelona</span>
+                        <span className="subName">@FCB</span>
+                    </div>
+                    <button className="followbtn">follow</button>
+                    <div className="followWidgetPopup">
+                    <div className="popupTop">
+                        <div className="fwpProfile">
+                            <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" />
+                            <span className="pSupName">Fc Barcelona</span>
+                            <span className="pSubName">@FCB</span>
+                        </div>
+                        <button className="popupfollowbtn">follow</button>
+                    </div>
+                    <p className="popupInfo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, amet dolore. Fugit quod aspernatur itaque repudiandae tempora vitae et sapiente.</p>
+                    <div className="followingContainer">
+                        <div className="followingItem">
+                            <span style={{fontWeight: "bold"}}>1.8M</span>
+                            <span className="following">following</span>
+                        </div>
+                        <div className="followingItem">
+                            <span style={{fontWeight: "bold"}}>10.8M</span>
+                            <span className="following">followers</span>
+                        </div>
+                    </div>
+                    <span className="popupfooter">Not followed by anyone you are following</span>
+                </div>
+                </div>
+                <div className="followWidgetItem">
+                    <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" className="widgetProfilePic" />
+                    <div className="widgetProfileNames">
+                        <span className="supName">Fc Barcelona</span>
+                        <span className="subName">@FCB</span>
+                    </div>
+                    <button className="followbtn">follow</button>
+                    <div className="followWidgetPopup">
+                    <div className="popupTop">
+                        <div className="fwpProfile">
+                            <img src="https://i.ibb.co/YPVYBGZ/fcb.png" alt="" />
+                            <span className="pSupName">Fc Barcelona</span>
+                            <span className="pSubName">@FCB</span>
+                        </div>
+                        <button className="popupfollowbtn">follow</button>
+                    </div>
+                    <p className="popupInfo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, amet dolore. Fugit quod aspernatur itaque repudiandae tempora vitae et sapiente.</p>
+                    <div className="followingContainer">
+                        <div className="followingItem">
+                            <span style={{fontWeight: "bold"}}>1.8M</span>
+                            <span className="following">following</span>
+                        </div>
+                        <div className="followingItem">
+                            <span style={{fontWeight: "bold"}}>10.8M</span>
+                            <span className="following">followers</span>
+                        </div>
+                    </div>
+                    <span className="popupfooter">Not followed by anyone you are following</span>
+                </div>
+                </div>
+                <div className="followWidgetItem">
+                    <span className="more">See more</span>
                 </div>
             </div>
            

@@ -5,15 +5,9 @@ import RightSidebar from "./components/RightSideBar/RightSidebar"
 function App() {
   return (
     <div className="app">
-      <div className="left">
-        <LeftSideBar/>
-      </div>
-      <div className="center">
-        adsas
-      </div>
-      <div className="right">
-        <RightSidebar/>
-      </div>
+      <LeftSideBar/>
+      <Home/>
+      <RightSidebar/>
     </div>
   );
 }
