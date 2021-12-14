@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgray;
+    cursor: pointer;
+    &:hover{
+        background-color: $widgetColor;
+    }
 
     .post__head{
         display: flex;
@@ -19,6 +23,9 @@
             &+span{
                 color: black;
                 font-weight: 500;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
         span{

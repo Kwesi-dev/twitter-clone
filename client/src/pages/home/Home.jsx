@@ -18,7 +18,7 @@ const Home = () => {
                 <div className="home__header">
                     <div className="home__header__top">
                         <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" />
-                        <input type="text" placeholder="What's happening"/>
+                        <input type="text" placeholder="What's happening?"/>
                     </div>
                     <div className="home__header__bottom">
                         <div className="icons">

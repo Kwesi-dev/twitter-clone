@@ -4,7 +4,6 @@
     padding-left: 30px;
     position: relative;
     margin-bottom: 20px;
-
     .searchBar{
         width: 80%;
         height: 20px;
@@ -15,6 +14,8 @@
         align-items: center;
         color: $textColor;
         padding: 10px 14px;
+        position: sticky;
+        top: 0;
 
         .searchIcon{
             font-size: 20px;
@@ -36,7 +37,7 @@
     }
     .trendsWidget{
         width: 86%;
-        background-color: $inputBackground;
+        background-color: $widgetColor;
         border-radius: 20px;
         margin-top: 10px;
         cursor: pointer;
@@ -98,11 +99,13 @@
     }
     .followWidget{
         width: 86%;
-        background-color: $inputBackground;
+        background-color: $widgetColor;
         border-radius: 20px;
         margin-bottom: 20px;
         padding-top: 10px;
         cursor: pointer;
+        position: sticky;
+        top: 0;
         .followWidgetHeader{
             font-size: 22px;
             font-weight: 600;
