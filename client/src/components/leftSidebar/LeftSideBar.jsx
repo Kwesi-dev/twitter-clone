@@ -10,9 +10,10 @@ import bookmark from '../../images/bookmark.svg'
 import cirlceMore from '../../images/circleMore.svg'
 import CheckIcon from '@mui/icons-material/Check'
 import { useState } from 'react'
+import {NavLink} from 'react-router-dom'
 const LeftSideBar = () => {
     const [showPopup, setShowPopup] = useState(false)
-
+   
     return (
         <div className='leftSideBar'>
             <div className="leftSidebarWrapper" >
@@ -21,10 +22,12 @@ const LeftSideBar = () => {
                         <img src={logo} alt="" className="logo"/>
                     </div>
                     <div className="sidebarItems">
-                        <div className="sidebarItem">
-                            <img src={home} alt="" className="sidebarItemIcon" />
-                            <span>Home</span>
-                        </div>
+                        <NavLink to="/" className={({isActive})=> (isActive ? "active" : "inactive")}>
+                            <div className="sidebarItem">
+                                <img src={home} alt="" className="sidebarItemIcon" />
+                                <span>Home</span>
+                            </div>
+                        </NavLink>
                         <div className="sidebarItem">
                             <img src={explore} alt="" className="sidebarItemIcon" />
                             <span>Explore</span>
@@ -45,10 +48,12 @@ const LeftSideBar = () => {
                             <img src={list} alt="" className="sidebarItemIcon" />
                             <span>Lists</span>
                         </div>
-                        <div className="sidebarItem">
-                            <img src={profile} alt="" className="sidebarItemIcon" />
-                            <span>Profile</span>
-                        </div>
+                        <NavLink to="profile" className={({isActive})=> (isActive ? "active" : "inactive")}>
+                            <div className="sidebarItem">
+                                <img src={profile} alt="" className="sidebarItemIcon" />
+                                <span>Profile</span>
+                            </div>
+                        </NavLink>
                         <div className="sidebarItem">
                             <img src={cirlceMore} alt="" className="sidebarItemIcon" />
                             <span>More</span>

@@ -172,17 +172,16 @@ const RightSidebar = () => {
                     <span className="more">See more</span>
                 </div>
             </div>
-           
-                <div className="rightFooter">
-                    <ul>
-                        <li>Terms of Service</li>
-                        <li>Privacy Policy</li>
-                        <li>Cookie Policy</li>
-                        <li>Adds info</li>
-                        <li>more ... </li>
-                        <li>&copy; 2021 Twitter, Inc</li>
-                    </ul>
-                </div>
+            <div className="rightFooter">
+                <ul>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
+                    <li>Cookie Policy</li>
+                    <li>Adds info</li>
+                    <li>more ... </li>
+                    <li>&copy; 2021 Twitter, Inc</li>
+                </ul>
+            </div>
         </div>
     )
 }
