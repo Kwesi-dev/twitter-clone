@@ -188,4 +188,128 @@
             }
         }
     }
+    .login__wrapper__final{
+        width: 40%;
+        height: 90%;
+        background-color: white;
+        border-radius: 20px;
+        margin: 30px auto;
+        .logoContainer{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .login__wrapper__logo{
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                margin: 10px auto;
+            }
+        }
+        h1{
+            margin-bottom: 40px;
+            font-size: 24px;
+            margin-left: 30px;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        .userInfo{
+            width: 85%;
+            background-color: $widgetColor;
+            height: 40px;
+            margin-left: 30px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            span:nth-child(1){
+                color: lightgray;
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            span:nth-child(2){
+                font-size: 18px;
+                color: lightgray;
+            }
+        }
+        .login__wrapper__form{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+            
+            .input__container{
+                width: 100%;
+                display: flex;
+                position: relative;
+
+                input{
+                    width: 94%;
+                    height: 35px;
+                    padding: 10px;
+                    border: 1px solid lightgray;
+                    font-size: 18px;
+                    color: $textColor;
+
+                    &:focus{
+                        outline-color: $mainColor;
+                    }
+                    &:focus::placeholder{
+                        color: $mainColor;
+                        font-size: 13px;
+                        position: absolute;
+                        top: 5px;
+                        left: 20px;
+                    }
+                }
+                .icon{
+                    position: absolute;
+                    top: 28px;
+                    right: 25px;
+                    cursor: pointer;
+                }
+            }
+            .forgot{
+                color: $mainColor;
+                font-size: 13px;
+                font-weight: 500;
+                margin-top: 2px;
+                margin-left: 10px;
+                margin-bottom: 60px;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            button{
+                margin-top: 80px;
+                width: 100%;
+                background-color: #87898C;
+                border: none;
+                border-radius: 20px;
+                height: 40px;
+                padding: 10px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                margin-bottom: 40px;
+            }
+        }
+        .login__wrapper__bottom{
+            margin-top: 30px;
+            margin-left: 30px;
+            span:nth-child(1){
+                color: $textColor;
+                margin-right: 5px;
+            }
+            span:nth-child(2){
+                color: $mainColor;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
 }
