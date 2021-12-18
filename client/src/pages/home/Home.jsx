@@ -11,7 +11,7 @@ import { useState } from "react"
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 const Home = () => {
     const [toPostImg, setToPostImg] = useState("")
-    console.log(toPostImg)
+    
     return (
         <div className="home"> 
             <div className="wrapper">
@@ -24,9 +24,12 @@ const Home = () => {
                         <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" />
                         <input type="text" placeholder="What's happening?"/>
                     </div>
-                    <CloseOutlinedIcon className="closeIcon"/>
                     {toPostImg && 
-                        <img src="https://i.ibb.co/kcpbcqd/goalIcon.jpg" alt="" className="toPostImg"/>
+                        <>
+                            <CloseOutlinedIcon className="closeIcon" onClick={()=>setToPostImg("")}/>
+                            <span className="remove">remove</span>
+                            <img src="https://i.ibb.co/kcpbcqd/goalIcon.jpg" alt="" className="toPostImg"/>
+                        </>
                     }
                     <div className="home__header__bottom">
                         <div className="icons">

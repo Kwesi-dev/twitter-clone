@@ -27,7 +27,7 @@
           align-items: center;
           position: sticky;
           top: 0;
-          
+          z-index: 999;
           span{
             margin-left: 20px;
             font-weight: 600;
@@ -72,13 +72,31 @@
           }
           .closeIcon{
               position: absolute;
-              top: 110px;
-              left: 110px;
-              background-color: lightgray;
+              top: 105px;
+              left: 105px;
+              background-color:rgb(36, 35, 35);
               border-radius: 50%;
-              padding: 5px;
+              padding: 3px;
               z-index: 999;
+              color:white;
               cursor: pointer;
+              &:hover{
+                background-color: rgb(51, 49, 49);
+              }
+              &:hover ~ .remove{
+                  opacity: 1;
+              }
+          }
+          .remove{
+              position: absolute;
+              top: 135px;
+              left: 105px;
+              font-size: 12px;
+              background-color: black;
+              color: white;
+              border-radius: 5px;
+              padding: 1px 3px;
+              opacity: 0;
           }
           .toPostImg{
               height: 320px;
@@ -95,6 +113,9 @@
                   display: flex;
                   align-items: center;
                   margin-left: 60px;
+                  .icon__container{
+                      margin-top: 5px;
+                  }
                   img{
                       height: 20px;
                       height: 20px;
