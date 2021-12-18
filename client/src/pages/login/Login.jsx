@@ -6,15 +6,20 @@ import { useState } from 'react'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
+import { useNavigate } from 'react-router-dom'
 const Login = ()=>{
    const [showPassword, setShowPassword] = useState(false)
-   const username = true
+   const username = false
+   const navigate = useNavigate()
+   const handleClose = ()=>{
+       navigate("/register", {replace: true})
+   }
     return(
         <div className="login">
             {!username ? (
                 <>
                     <div className="login__wrapper">
-                        <CloseOutlinedIcon className="login__wrapper__icon"/>
+                        <CloseOutlinedIcon className="login__wrapper__icon" onClick={handleClose}/>
                         <img className="login__wrapper__logo" src={logo} alt=""/>
                         <span className="login__wrapper__header">Sign in to Twitter</span>
                         <div className="login__wrapper__google">
@@ -41,7 +46,7 @@ const Login = ()=>{
                 </>
                 ) :(
                 <div className="login__wrapper__final">
-                    <CloseOutlinedIcon className="close__icon"/>
+                    <CloseOutlinedIcon className="close__icon" onClick={handleClose}/>
                     <div className="logoContainer">
                         <img className="login__wrapper__logo" src={logo} alt=""/>
                     </div>

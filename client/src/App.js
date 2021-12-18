@@ -13,7 +13,7 @@ function App() {
       <div className="app">
         {user && <LeftSideBar/>}
         <Routes>
-          <Route path="/" element={user ? <Home/>: <Navigate to="/login"/>}/>
+          <Route path="/" element={user ? <Home/>: <Navigate to="/register"/>}/>
           <Route path="/profile" element={user ? <Profile/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={user ? <Navigate to="/"/>: <Login/>}/>
           <Route path="/register" element={user ? <Navigate to="/"/>: <Register/>}/>

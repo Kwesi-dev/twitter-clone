@@ -2,7 +2,7 @@ import "./register.scss"
 import twitterwhite from '../../images/twitterwhite.png'
 import twitter from '../../images/twitter.png'
 import apple from '../../images/apple.png'
-
+import { Link } from 'react-router-dom'
 const Register = () => {
     return (
         <div className="register">
@@ -26,7 +26,9 @@ const Register = () => {
                     <b> Terms of Service</b> and <b>Privacy Policy</b>, including <b>Cookie Use</b>
                     </p>
                     <span className="footer__header">Already have an account?</span>
-                    <button className="loginBtn">Sign in</button>
+                    <Link to="/login">
+                        <button className="loginBtn">Sign in</button>
+                    </Link>
                 </div>
             </div>    
         </div>
