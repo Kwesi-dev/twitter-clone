@@ -46,6 +46,7 @@
           flex-direction: column;
           padding: 7px 12px;
           border-bottom: 1px solid lightgray;
+          position: relative;
           .home__header__top{
               display: flex;
               align-items: center;
@@ -68,6 +69,23 @@
                       outline: none;
                   }
               }
+          }
+          .closeIcon{
+              position: absolute;
+              top: 110px;
+              left: 110px;
+              background-color: lightgray;
+              border-radius: 50%;
+              padding: 5px;
+              z-index: 999;
+              cursor: pointer;
+          }
+          .toPostImg{
+              height: 320px;
+              width: 80%;
+              object-fit: cover;
+              margin-left: 90px;
+              margin-bottom: 20px;
           }
           .home__header__bottom{
               display: flex;

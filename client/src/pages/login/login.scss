@@ -17,6 +17,17 @@
         border-radius: 20px;
         position: relative;
 
+        .login__wrapper__icon{
+            position: absolute;
+            padding: 10px;
+            border-radius: 50%;
+            top: 10px;
+            left: 20px;
+            cursor: pointer;
+            &:hover{
+                background-color: lightgray;
+            }
+        }
         .login__wrapper__logo{
             width: 30px;
             height: 30px;
@@ -194,6 +205,18 @@
         background-color: white;
         border-radius: 20px;
         margin: 30px auto;
+        position: relative;
+        .close__icon{
+            position: absolute;
+            padding: 10px;
+            border-radius: 50%;
+            top: 10px;
+            left: 20px;
+            cursor: pointer;
+            &:hover{
+                background-color: lightgray;
+            }
+        }
         .logoContainer{
             width: 100%;
             display: flex;

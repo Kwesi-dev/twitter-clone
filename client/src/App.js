@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 function App() {
-  const user = false
+  const user = true
   return (
     <Router>
       <div className="app">

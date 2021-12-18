@@ -2,8 +2,10 @@ import './login.scss'
 import logo from '../../images/twitter.png'
 import google from '../../images/google.png'
 import apple from '../../images/apple.png'
-import VisibilityIcon from '@mui/icons-material/Visibility'
 import { useState } from 'react'
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 const Login = ()=>{
    const [showPassword, setShowPassword] = useState(false)
    const username = true
@@ -12,6 +14,7 @@ const Login = ()=>{
             {!username ? (
                 <>
                     <div className="login__wrapper">
+                        <CloseOutlinedIcon className="login__wrapper__icon"/>
                         <img className="login__wrapper__logo" src={logo} alt=""/>
                         <span className="login__wrapper__header">Sign in to Twitter</span>
                         <div className="login__wrapper__google">
@@ -38,6 +41,7 @@ const Login = ()=>{
                 </>
                 ) :(
                 <div className="login__wrapper__final">
+                    <CloseOutlinedIcon className="close__icon"/>
                     <div className="logoContainer">
                         <img className="login__wrapper__logo" src={logo} alt=""/>
                     </div>
@@ -49,7 +53,11 @@ const Login = ()=>{
                     <div className="login__wrapper__form">
                         <div className="input__container">
                             <input type={showPassword ? "text" : "password"} placeholder="Password"/>
-                            <VisibilityIcon className="icon" onClick={()=>setShowPassword(!showPassword)}/>
+                            {showPassword ? 
+                                <VisibilityOffOutlinedIcon className="icon" onClick={()=>setShowPassword(!showPassword)}/>
+                            : 
+                                <VisibilityOutlinedIcon className="icon" onClick={()=>setShowPassword(!showPassword)}/>
+                            }
                         </div>
                         <span className="forgot">Forgot password?</span>
                         <button>Log in</button>

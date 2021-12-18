@@ -7,7 +7,11 @@ import schedule from "../../images/schedule.svg"
 import gif from "../../images/gif.svg"
 import Post from "../../components/post/Post"
 import {posts} from '../../dummyData'
+import { useState } from "react"
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 const Home = () => {
+    const [toPostImg, setToPostImg] = useState("")
+    console.log(toPostImg)
     return (
         <div className="home"> 
             <div className="wrapper">
@@ -20,9 +24,18 @@ const Home = () => {
                         <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" />
                         <input type="text" placeholder="What's happening?"/>
                     </div>
+                    <CloseOutlinedIcon className="closeIcon"/>
+                    {toPostImg && 
+                        <img src="https://i.ibb.co/kcpbcqd/goalIcon.jpg" alt="" className="toPostImg"/>
+                    }
                     <div className="home__header__bottom">
                         <div className="icons">
-                            <img src={media} alt="" />
+                            <div className="icon__container">
+                                <label htmlFor="file">
+                                    <img src={media} alt="" />
+                                </label>
+                                <input type="file" id="file" style={{display: "none"}} onChange={e=>setToPostImg(e.target.files[0])}/>
+                            </div>
                             <img src={gif} alt="" />
                             <img src={poll} alt="" />
                             <img src={emoji} alt="" />
