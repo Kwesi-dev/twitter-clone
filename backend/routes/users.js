@@ -19,7 +19,7 @@ router.get("/", verifyToken, async (req, res)=>{
             res.status(500).json(err)
         }
     }else{
-        return res.status(500).json("only admins are allowed this function")
+        return res.status(403).json("only admins are allowed this function")
     }
 })
 
@@ -36,6 +36,9 @@ router.get("/:id", verifyToken, async (req, res)=>{
 //update a user
 router.put("/:id",  verifyToken, async (req, res)=>{
     if(req.params.id === req.user.id || req.user.isAdmin){
+        if(req.body.password){
+            return CryptoJS.AES.encrypt(req.body.password, process.env.Secret_Key).toString()
+        }
         try{
             const updatedUser = await User.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
             res.status(200).json(updatedUser)
@@ -43,7 +46,7 @@ router.put("/:id",  verifyToken, async (req, res)=>{
             res.status(500).json(err)
         }
     }else{
-        return res.status(500).json("you are not allowed this function")
+        return res.status(403).json("you are not allowed this function")
     }
 })
 
@@ -57,7 +60,7 @@ router.delete("/:id",  verifyToken, async (req, res)=>{
             res.status(500).json(err)
         }
     }else{
-        return res.status(500).json("you are not allowed this function")
+        return res.status(403).json("you are not allowed this function")
     }
 })
 
