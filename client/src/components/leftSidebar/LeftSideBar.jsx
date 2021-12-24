@@ -9,11 +9,16 @@ import profile from '../../images/profile.svg'
 import bookmark from '../../images/bookmark.svg'
 import cirlceMore from '../../images/circleMore.svg'
 import CheckIcon from '@mui/icons-material/Check'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {NavLink} from 'react-router-dom'
+import { userLogout } from '../../userContext/apiCalls'
+import { UserContext } from '../../userContext/userContext'
 const LeftSideBar = () => {
     const [showPopup, setShowPopup] = useState(false)
-   
+    const { dispatch, user } = useContext(UserContext)
+    const handleLogout = ()=>{
+        userLogout(dispatch)
+    }
     return (
         <div className='leftSideBar'>
             <div className="leftSidebarWrapper" >
@@ -63,10 +68,10 @@ const LeftSideBar = () => {
                 </div>             
                 <div className="leftSidebarBottom">
                     <div className="sidebarBottomProfile">
-                        <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" className="profileImg" />
+                        <img src={user.profilePic} alt="" className="profileImg" />
                         <div className="profileUsernames">
-                            <span>kwesi</span>
-                            <span className="span2">kwesi</span>
+                            <span>{user.username}</span>
+                            <span className="span2">{user.username}</span>
                         </div>
                         <MoreHorizIcon className="sidebarbottomIcon" onClick={()=>setShowPopup(!showPopup)}/>
                     </div>
@@ -74,17 +79,17 @@ const LeftSideBar = () => {
                         <div className="profilePopup">
                             <div className="popupProfile">
                                 <div className="popupLeft">
-                                    <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" className="profileImg" />
+                                    <img src={user.profilePic} alt="" className="profileImg" />
                                     <div className="profileUsernames">
-                                        <span>Kwesi Dev</span>
-                                        <span className="span2">@KwesiDev</span>
+                                        <span>{user.username}</span>
+                                        <span className="span2">{user.username}</span>
                                     </div>
                                 </div>
                                 <CheckIcon className="checkIcon"/>
                             </div>
                             <div className="popupBottom">
                                 <span>Add an existing document</span>
-                                <span>Log out @KwesiDev</span>
+                                <span onClick={handleLogout}>Log out {user.username}</span>
                             </div>
                         </div>
                     }

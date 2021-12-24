@@ -5,11 +5,12 @@ const multer = require("multer")
 const authRoute = require("./routes/auth")
 const usersRoute = require("./routes/users")
 const postsRoute = require("./routes/posts")
+const cors = require("cors")
 dotenv.config()
 const app = express()
 
 app.use(express.json())
-
+app.use(cors())
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
     console.log("database connected")

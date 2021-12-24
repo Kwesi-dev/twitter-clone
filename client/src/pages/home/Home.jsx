@@ -7,11 +7,12 @@ import schedule from "../../images/schedule.svg"
 import gif from "../../images/gif.svg"
 import Post from "../../components/post/Post"
 import {posts} from '../../dummyData'
-import { useState } from "react"
+import { useContext, useState } from "react"
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
+import { UserContext } from "../../userContext/userContext"
 const Home = () => {
     const [toPostImg, setToPostImg] = useState("")
-    
+    const { user } = useContext(UserContext)
     return (
         <div className="home"> 
             <div className="wrapper">
@@ -21,7 +22,7 @@ const Home = () => {
                 </div>
                 <div className="home__header">
                     <div className="home__header__top">
-                        <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" />
+                        <img src={user.profilePic} alt="" />
                         <input type="text" placeholder="What's happening?"/>
                     </div>
                     {toPostImg && 

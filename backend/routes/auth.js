@@ -31,12 +31,13 @@ router.post("/login", async(req, res)=>{
         const bytes  = CryptoJS.AES.decrypt(user.password, process.env.Secret_Key)
         const originalPassword = bytes.toString(CryptoJS.enc.Utf8)
         
+        if(req.body.password !== originalPassword) return res.status(500).json("password incorrect")
+        
         const accessToken = jwt.sign({
             id: user._id,
             isAdmin: user.isAdmin,
         }, process.env.Secret_Key, {expiresIn: "3d"})
 
-        if(req.body.password !== originalPassword) return res.status(500).json("password incorrect")
         const { password, ...others } = user._doc
         res.status(200).json({...others, accessToken}) 
     }catch(err){

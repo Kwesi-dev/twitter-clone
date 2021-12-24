@@ -6,8 +6,10 @@ import Profile from "./pages/profile/Profile"
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
+import { useContext } from 'react'
+import { UserContext } from './userContext/userContext'
 function App() {
-  const user = false
+  const { user } = useContext(UserContext)
   return (
     <Router>
       <div className="app">

@@ -4,26 +4,29 @@ import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
+import { useContext } from 'react'
+import {UserContext} from '../../userContext/userContext'
 const Profile = () => {
+    const { user } = useContext(UserContext)
     return (
         <div className="profile">
             <div className="profile__nav">
                 <KeyboardBackspaceOutlinedIcon className="profile__nav__icon"/>
                 <div className="profile__nav__item">
-                    <span>KwesiDev</span>
+                    <span>{user.username}</span>
                     <span>0 tweet</span>
                 </div>
             </div>
             <div className="profile__header">
-                <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" className="profile__header__coverImg"/>
-                <img src="https://i.ibb.co/LZm6JQb/khalid.jpg" alt="" className="profile__header__img" />
+                <img src={user.profilePic} alt="" className="profile__header__coverImg"/>
+                <img src={user.profilePic} alt="" className="profile__header__img" />
                 <button>Edit profile</button>
             </div>
             <div className="profile__body">
                 <div className="profile__body__userInfo">
                     <div className="profile__body__username">
-                        <span>KwesiDev</span>
-                        <span>@KwesiDev</span>
+                        <span>{user.username}</span>
+                        <span>{user.username}</span>
                     </div>
                     <div className="profile__body__about">
                         <span>I am a software developer. I am into web development</span>

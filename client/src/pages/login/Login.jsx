@@ -2,21 +2,40 @@ import './login.scss'
 import logo from '../../images/twitter.png'
 import google from '../../images/google.png'
 import apple from '../../images/apple.png'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import { useNavigate } from 'react-router-dom'
+import { userLogin } from '../../userContext/apiCalls'
+import { useContext } from 'react'
+import { UserContext } from '../../userContext/userContext'
+
 const Login = ()=>{
    const [showPassword, setShowPassword] = useState(false)
-   const username = false
+   const [email, setEmail] = useState("")
+   const [password, setPassword] = useState("")
+   const emailRef = useRef()
+   const passwordRef = useRef()
+
+   const { dispatch } = useContext(UserContext)
    const navigate = useNavigate()
    const handleClose = ()=>{
        navigate("/register", {replace: true})
    }
+
+   const handleNext = (e)=>{
+       e.preventDefault()
+       setEmail(emailRef.current.value)
+   }
+   const handleLogin = (e)=>{
+       e.preventDefault()
+       setPassword(passwordRef.current.value)
+       userLogin(dispatch, {email, password})
+   }
     return(
         <div className="login">
-            {!username ? (
+            {!email ? (
                 <>
                     <div className="login__wrapper">
                         <CloseOutlinedIcon className="login__wrapper__icon" onClick={handleClose}/>
@@ -32,8 +51,8 @@ const Login = ()=>{
                         </div>
                         <span className="or">or</span>
                         <form>
-                            <input type="text" placeholder="Phone, email or username"/>
-                            <button>Next</button>
+                            <input type="text" placeholder="Phone, email or username" ref={emailRef}/>
+                            <button onClick={handleNext}>Next</button>
                         </form>
                         <div className="login__wrapper__forgot">
                             <span>Forgot password?</span>
@@ -57,7 +76,7 @@ const Login = ()=>{
                     </div>
                     <div className="login__wrapper__form">
                         <div className="input__container">
-                            <input type={showPassword ? "text" : "password"} placeholder="Password"/>
+                            <input type={showPassword ? "text" : "password"} placeholder="Password" ref={passwordRef}/>
                             {showPassword ? 
                                 <VisibilityOffOutlinedIcon className="icon" onClick={()=>setShowPassword(!showPassword)}/>
                             : 
@@ -65,7 +84,7 @@ const Login = ()=>{
                             }
                         </div>
                         <span className="forgot">Forgot password?</span>
-                        <button>Log in</button>
+                        <button onClick={handleLogin}>Log in</button>
                     </div>
                     <div className="login__wrapper__bottom">
                         <span>Dont have an account?</span>
