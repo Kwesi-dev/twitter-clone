@@ -1,4 +1,4 @@
-export const posts = [
+export const dposts = [
     {
         id: 1,
         profileImg: "https://i.ibb.co/kcpbcqd/goalIcon.jpg",

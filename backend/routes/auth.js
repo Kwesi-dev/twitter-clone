@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 const jwt = require("jsonwebtoken")
 dotenv.config()
 
+
 router.post("/register", async(req, res)=>{
     const hashedPassword = CryptoJS.AES.encrypt(req.body.password, process.env.Secret_Key).toString()
 
@@ -44,4 +45,6 @@ router.post("/login", async(req, res)=>{
         res.status(500).json(err)
     }
 })
+
+
 module.exports = router
