@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { userLogin } from '../../userContext/apiCalls'
 import { useContext } from 'react'
 import { UserContext } from '../../userContext/userContext'
-
+import { Link } from 'react-router-dom'
 const Login = ()=>{
    const [showPassword, setShowPassword] = useState(false)
    const [email, setEmail] = useState("")
@@ -18,7 +18,7 @@ const Login = ()=>{
    const emailRef = useRef()
    const passwordRef = useRef()
 
-   const { dispatch } = useContext(UserContext)
+   const { dispatch, isFetching, error } = useContext(UserContext)
    const navigate = useNavigate()
    const handleClose = ()=>{
        navigate("/register", {replace: true})
@@ -59,7 +59,9 @@ const Login = ()=>{
                         </div>
                         <div className="login__wrapper__bottom">
                             <span>Dont have an account?</span>
-                            <span>Sign up</span>
+                            <Link to="/register">
+                                <span>Sign up</span>
+                            </Link>
                         </div>
                     </div>
                 </>
@@ -71,8 +73,8 @@ const Login = ()=>{
                     </div>
                     <h1>Enter your password</h1>
                     <div className="userInfo">
-                        <span>username</span>
-                        <span>KwesiDev</span>
+                        <span>email</span>
+                        <span>{email}</span>
                     </div>
                     <div className="login__wrapper__form">
                         <div className="input__container">
@@ -84,7 +86,8 @@ const Login = ()=>{
                             }
                         </div>
                         <span className="forgot">Forgot password?</span>
-                        <button onClick={handleLogin}>Log in</button>
+                        <button onClick={handleLogin} disabled={isFetching}>Log in</button>
+                        {error && <span className="error">login failed</span>}
                     </div>
                     <div className="login__wrapper__bottom">
                         <span>Dont have an account?</span>

@@ -8,6 +8,7 @@ import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import { useContext } from 'react'
 import { UserContext } from './userContext/userContext'
+import SimpleRegister from './pages/simpleRegister/SimpleRegister'
 function App() {
   const { user } = useContext(UserContext)
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/profile" element={user ? <Profile/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={user ? <Navigate to="/"/>: <Login/>}/>
           <Route path="/register" element={user ? <Navigate to="/"/>: <Register/>}/>
+          <Route path="/userpassregister" element={user ? <Navigate to="/"/>: <SimpleRegister/>}/>
         </Routes>
         {user && <RightSidebar/>}
       </div>

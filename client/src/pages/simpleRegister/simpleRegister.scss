@@ -1,0 +1,74 @@
+@import "../../globals.scss"; 
+.simpleRegister{
+    height: 100vh;
+    width: 100vw;
+    background-color: $loginBColor;
+    display: flex;
+    justify-content: center;
+
+    .wrapper{
+        width: 30%;
+        height: 80%;
+        background-color: white;
+        margin: 60px auto;
+        border-radius: 20px;
+        .imgContainer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            .sRlogo{
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+            }
+        }
+        form{
+            margin: 0 auto;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+
+            input{
+                padding: 12px;
+                border-radius: 10px;
+                font-size: 18px;
+                color: $textColor;
+                font-weight: 300;
+                margin-bottom: 20px;
+                border: 0.5px solid lightgray;
+
+                &:focus{
+                    outline-color: $mainColor2;
+                }
+            }
+            button{
+                margin-top: 30px;
+                padding: 12px;
+                border: none;
+                border-radius: 20px;
+                background-color: $mainColor;
+                color: white;
+                font-weight: 400;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+        .success{
+            display: inline-block;
+            color: green;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+        .error{
+            display: inline-block;
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+    }
+}

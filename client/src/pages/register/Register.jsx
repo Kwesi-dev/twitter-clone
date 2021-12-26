@@ -19,9 +19,11 @@ const Register = () => {
                         <span>Sign in with Apple</span>
                     </div>
                     <span className="or">or</span>
-                    <button className="registerBtn">
-                        sign up with phone or email
-                    </button>
+                    <Link to="/userpassregister">
+                        <button className="registerBtn">
+                            sign up with phone or email
+                        </button>
+                    </Link>
                     <p className="privacy">By signing up, you agree to the
                     <b> Terms of Service</b> and <b>Privacy Policy</b>, including <b>Cookie Use</b>
                     </p>
