@@ -1,2 +1,2 @@
 # twitter-clone
-still under development... I am developing this twitter clone with mern stack.
+I developed this twitter clone with mern stack to actually improve my skills.
